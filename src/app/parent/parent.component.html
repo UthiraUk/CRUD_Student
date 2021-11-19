@@ -1,0 +1,19 @@
+<h3>Parent Component</h3>
+<form [formGroup]="loginForm" novalidate>
+  <div class="example-container">
+    <label for="Name">UserName</label>
+    <input type="text" placeholder="Name" class="form-control" id="name" formControlName="name">
+    <label for="Password">PassWord</label>
+   <input type="password" placeholder="Password" class="form-control" id="password" formControlName="Password">   
+  </div>
+</form>
+<hr>
+
+<app-child [parentData]="loginForm" (ValuePassParent)="addValue($event)"
+
+></app-child>
+
+  <ul>
+      
+    {{ChildtoParent | json}}
+  </ul>
